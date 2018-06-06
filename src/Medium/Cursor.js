@@ -89,6 +89,15 @@
 		},
 		caretToAfter: function (el) {
 			this.moveCursorToAfter(el);
-		}
+		},
+		isCaretAtBegin: function (el) {
+            		var sel = rangy.getSelection();
+            		return sel.anchorOffset === 0;
+        	},
+		isCaretAtEnd: function (el) {
+           		var sel = rangy.getSelection();
+            		return sel.anchorOffset === el.innerText.length;
+        	}
+		
 	};
 })(Medium);
